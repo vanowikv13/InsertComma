@@ -1,0 +1,51 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+obj/
+bin/
+Debug/
+*.sln
+stdafx.h
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Executables
+*.out
+*.vs
+*.app
+*.tlog
+# Another
+*.VC.VC.opendb
+*.suo
+*.VC.db
+*.pdb
+*.ipdb
+*.iobj
+*.exp
+*.vcxproj.user
+*.log
+*.idb
+*.ilk
+*.enc
+*.sln
+*.lastcodeanalysissucceeded
+*.vcxproj
+*.vcxproj.filters
+stdafx.cpp
+targetver.h
