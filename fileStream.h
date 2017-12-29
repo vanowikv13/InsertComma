@@ -4,6 +4,7 @@
 #include <string>
 
 using namespace std;
+
 class fileStream
 {
 public:
@@ -15,6 +16,7 @@ public:
 	void connectToFile(string f, bool toRead);
 	vector<string> returnLinesFromFile(string f);
 	void writeToFile(string f, string text);
+	void coleFile();
 protected:
 	bool checkIfFileOpen();
 	fstream file;

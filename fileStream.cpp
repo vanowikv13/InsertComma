@@ -21,8 +21,12 @@ bool fileStream::checkIfFileOpen() {
 			L"Please check if file exist or if you write good path",
 			L"The file isn't open, sorry", IDOK
 		);
-		EXIT_FAILURE;
-		return false;
+		MessageBoxW(
+			NULL,
+			L"Now app will close, please try again",
+			L"Sorry for trouble", IDOK
+		);
+		FatalExit(1);
 	}
 	return true;
 }
@@ -31,18 +35,16 @@ void fileStream::connectToFile(string f, bool toRead)
 {
 	if (file.is_open())
 		file.close();
-
 	if (toRead) {
 		file.open(f, ios::in);
-		checkIfFileOpen();
 		this->fileName = f;
 	}
 	else
 		file.open(f, ios::out | ios::trunc);
-
+	checkIfFileOpen();
 }
 
-//return the whole file .txt in vector
+//return the whole file .txt in vector (line by line)
 vector<string> fileStream::returnLinesFromFile(string f)
 {
 	connectToFile(f, true);
@@ -54,16 +56,22 @@ vector<string> fileStream::returnLinesFromFile(string f)
 	return lines;
 }
 
-
-void fileStream::writeToFile(string f, string text)
+//write to exist file or new file erasing content
+void fileStream::writeToFile(string path, string textToWrite)
 {
-	connectToFile(f,false);
-	file << text;
+	connectToFile(path, false);
+	file << textToWrite;
 	MessageBoxW(
 		NULL,
-		L"Communication",
-		L"Now we write to file", IDOK
+		L"Operation sucessed",
+		L"Communication", IDOK
 	);
+}
+
+void fileStream::coleFile()
+{
+	if(checkIfFileOpen())
+		file.close();
 }
 
 string fileStream::getFileName()
