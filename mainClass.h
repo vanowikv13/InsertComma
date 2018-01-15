@@ -19,8 +19,11 @@ public:
 	void options();
 	//set name of the file what we will work
 	void setFileName();
+	//this functino put everything from file to table(vector<string>) in class object: linesFromFile
 	void getLinesFromFile(string s);
+	//start basic function in program
 	void start();
+	//erase theLastConntent(string) and put content LinesFromFile(vector<string>)
 	void collectTheLastConntent();
 protected:
 	fileStream file;

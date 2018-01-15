@@ -39,11 +39,13 @@ void mainClass::writeToFile()
 	
 }
 
+//some options in program like change theme
 void mainClass::options()
 {
 
 }
 
+//this function is for set file name at the begining
 void mainClass::setFileName()
 {
 	cout << "write path and name of file " << endl;
